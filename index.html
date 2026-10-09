@@ -185,10 +185,18 @@ window.startShared=a=>{api=a;$("ab").style.display="";
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {getFirestore,doc,collection,onSnapshot,setDoc} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-/* ====== PASTE YOUR FIREBASE CONFIG HERE ====== */
-const ADMIN_EMAIL="azimjonovanilufar44@gmail.com"; /* only this email gets the admin panel */
-const firebaseConfig={apiKey:"PASTE_API_KEY",authDomain:"PASTE",projectId:"PASTE",appId:"PASTE"};
-/* ============================================= */
+
+/* ====== FIREBASE CONFIGURATION ====== */
+const ADMIN_EMAIL="azimjonovanilufar44@gmail.com";
+const firebaseConfig = {
+  apiKey: "AIzaSyCQAxwV15k51xbOs8FThy5dh4iHDd04M0c",
+  authDomain: "flat-duties.firebaseapp.com",
+  projectId: "flat-duties",
+  storageBucket: "flat-duties.appspot.com",
+  appId: "1:215286230491:web:24f5a359ef1549419fbcf4"
+};
+/* ==================================== */
+
 if(firebaseConfig.apiKey.startsWith("PASTE")){document.getElementById("note").textContent="⚠️ Firebase is not set up yet – showing the default roster only."}
 else{const app=initializeApp(firebaseConfig),db=getFirestore(app),au=getAuth(app);
 window.startShared({
